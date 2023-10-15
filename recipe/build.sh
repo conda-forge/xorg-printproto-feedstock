@@ -32,6 +32,8 @@ if [ -n "$CYGWIN_PREFIX" ] ; then
         -I "$BUILD_PREFIX_M/Library/mingw-w64/share/aclocal"
     )
     autoreconf "${autoreconf_args[@]}"
+else
+    cp -f $BUILD_PREFIX/share/gnuconfig/config.* .
 fi
 
 export PKG_CONFIG_LIBDIR=$uprefix/lib/pkgconfig:$uprefix/share/pkgconfig
